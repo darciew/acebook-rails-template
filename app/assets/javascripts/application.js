@@ -10,5 +10,20 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
 //= require_tree .
+//= require jquery
+//= require jquery_ujs
+
+
+$( document ).ready(function() {
+  // $('.like-button').click(function(event) {
+  //   event.preventDefault();
+  //   post_id = $(this).siblings()[1].value
+  //   user_id = $(this).siblings()[2].value
+  //   url = $(this).parent()[0].action
+  //   $.post(url, {post_id: post_id, user_id: user_id}, function() {
+  //     a = $('#like-count14').text()
+  //     console.log(parseInt(a.split("")[0]) + 1)
+  //   })
+  // })
+})
