@@ -1,7 +1,16 @@
+<%= button_to new_post_path, class: 'create-post' do %>
+  Create post
+<% end %>
+
+<div class="create_post_box" hidden>
+  <%= form_for @post do |form| %>
+    <%= form.label :message %>
+    <%= form.text_area :message %>
+
+    <%= form.submit "Submit" %>
+  <% end %>
+</div>
+
 <div class='timeline'>
   <%= render @posts %>
 </div>
-
-<%= link_to new_post_path do %>
-  Create post
-<% end %>

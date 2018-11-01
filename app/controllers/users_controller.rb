@@ -3,6 +3,7 @@ class UsersController < ApplicationController
     @user = User.friendly.find(params[:id])
     @posts = @user.posts.reverse
     @wallposts = @user.wall_posts.reverse
+    @comment = Comment.new
   rescue ActiveRecord::RecordNotFound
     user_not_found
   end

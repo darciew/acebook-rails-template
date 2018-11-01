@@ -16,14 +16,14 @@
 
 
 $( document ).ready(function() {
-  // $('.like-button').click(function(event) {
-  //   event.preventDefault();
-  //   post_id = $(this).siblings()[1].value
-  //   user_id = $(this).siblings()[2].value
-  //   url = $(this).parent()[0].action
-  //   $.post(url, {post_id: post_id, user_id: user_id}, function() {
-  //     a = $('#like-count14').text()
-  //     console.log(parseInt(a.split("")[0]) + 1)
-  //   })
-  // })
+  $('.comment-button').click(function(event){
+     event.preventDefault();
+     $(this).parent().next().show()
+  });
+
+  $('.create-post').click(function(event){
+     event.preventDefault();
+     $('.create_post_box').show()
+  });
+
 })
