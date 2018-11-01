@@ -17,7 +17,7 @@ RSpec.feature "Timeline", type: :feature do
     end
 
     scenario 'Posts have authors name' do
-      expect(find('a#1.post-author')).to have_content('TestName')
+      expect(find('.post-author')).to have_content('TestName')
     end
 
     scenario "Posts have a timestamp" do
