@@ -1,12 +1,17 @@
-<% if current_user %>
-<%= link_to('Logout', destroy_user_session_path, id: "log-out" , method: :delete) %>
-<%= button_to('My Profile', user_path(current_user), method: :get, id: 'profile-button') %>
-<% end %>
-
-<div class='timeline'>
-  <%= render @posts %>
+<div class='nav'>
+  <% if current_user %>
+    <%= link_to('Logout', destroy_user_session_path, id: "log-out" , method: :delete) %>
+    <%= link_to('My Profile', user_path(current_user), method: :get, id: 'profile-button') %>
+  <% end %>
 </div>
-
-<%= link_to new_post_path do %>
-  Create post
-<% end %>
+<div class='timeline-wrapper'>
+  <h1>AceBook</h1>
+  <div class="create-post">
+    <%= link_to new_post_path do %>
+    Create post
+    <% end %>
+  </div>
+  <div class="posts-timeline">
+    <%= render @posts %>
+  </div>
+</div>
