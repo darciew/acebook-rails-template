@@ -30,7 +30,6 @@ This is a collaborative 2-week project to make a social media app. It is an oppo
 - [x] 95%+ Test Coverage
 - [x] Users can comment on posts
 - [x] Website has a navigation menu
-- [ ] Dynamic and Responsive layout
 
 ## Instructions
 Clone this repo:
