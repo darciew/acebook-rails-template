@@ -3,6 +3,17 @@
 # AceBook by Team COAD
 [Darcie Walsh](https://github.com/darciew), [Cristina María Ocaña Manzano](https://github.com/cristinaocanamanzano), [Andres Faraone-Pirie](https://github.com/afaraone/), [Oliver Baum](https://github.com/olliebaum)
 
+## Technologies
+[Rails](https://rubyonrails.org/)
+
+[Devise](https://github.com/plataformatec/devise)
+
+[PostgreSQL](https://www.postgresql.org/)
+
+[RSpec](http://rspec.info/)
+
+[Capybara](https://github.com/teamcapybara/capybara)
+
 ## Task
 This is a collaborative 2-week project to make a social media app. It is an opportunity for us to apply our knowledge of Rails, Continuous Integration, Deployment via Heroku and Agile Development.
 
@@ -53,16 +64,8 @@ $ bin/rails server
 ## Heroku
 [View on Heroku here](https://acebook-coad.herokuapp.com)
 
-## Built with
-[Rails](https://rubyonrails.org/)
-
-[Devise](https://github.com/plataformatec/devise)
-
-[PostgreSQL](https://www.postgresql.org/)
-
-[RSpec](http://rspec.info/)
-
-[Capybara](https://github.com/teamcapybara/capybara)
+## Depoyment Pipeline 
+![Imgur](https://i.imgur.com/ozTgN36.png)
 
 ## How to contribute to this project
 Contributions are welcome. Feel free to fork and make pull requests!
