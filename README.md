@@ -65,7 +65,7 @@ $ bin/rails server
 [View on Heroku here](https://acebook-coad.herokuapp.com)
 
 ## Depoyment Pipeline 
-![Imgur](https://i.imgur.com/ozTgN36.png)
+![Imgur](https://i.imgur.com/CbCNr1y.png)
 
 ## How to contribute to this project
 Contributions are welcome. Feel free to fork and make pull requests!
