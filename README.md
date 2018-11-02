@@ -17,10 +17,10 @@ This is a collaborative 2-week project to make a social media app. It is an oppo
 - [x] Users can post comments
 - [x] RESTful Routes
 - [x] 95% Test Coverage
-- [ ] Users can comment on posts
+- [x] Users can comment on posts
 - [ ] Users can post images
 - [ ] Users can join groups
-- [ ] Website has a navigation menu
+- [x] Website has a navigation menu
 - [ ] Dynamic and Responsive layout
 
 ## Instructions
@@ -55,15 +55,17 @@ $ bin/rails server
 
 ## Built with
 [Rails](https://rubyonrails.org/)
+
 [Devise](https://github.com/plataformatec/devise)
+
 [PostgreSQL](https://www.postgresql.org/)
+
 [RSpec](http://rspec.info/)
+
 [Capybara](https://github.com/teamcapybara/capybara)
-[JQuery](https://jquery.com/)
 
 ## How to contribute to this project
 Contributions are welcome. Feel free to fork and make pull requests!
-See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Check out the team's blog!
 We documented our learning on Medium [here](https://medium.com/makers-team-coad)
