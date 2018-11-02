@@ -27,10 +27,8 @@ This is a collaborative 2-week project to make a social media app. It is an oppo
 - [x] Users can like posts
 - [x] Users can post comments
 - [x] RESTful Routes
-- [x] 95% Test Coverage
+- [x] 95%+ Test Coverage
 - [x] Users can comment on posts
-- [ ] Users can post images
-- [ ] Users can join groups
 - [x] Website has a navigation menu
 - [ ] Dynamic and Responsive layout
 
@@ -64,7 +62,7 @@ $ bin/rails server
 ## Heroku
 [View on Heroku here](https://acebook-coad.herokuapp.com)
 
-## Depoyment Pipeline 
+## Depoyment Pipeline
 ![Imgur](https://i.imgur.com/CbCNr1y.png)
 
 ## How to contribute to this project
