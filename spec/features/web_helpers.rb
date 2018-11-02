@@ -52,7 +52,7 @@ end
 def create_wall_post(message)
   visit '/testname'
   click_link 'Post to this wall'
-  fill_in 'Text', with: message
+  fill_in 'wall_post[text]', with: message
   click_button 'Submit'
 end
 

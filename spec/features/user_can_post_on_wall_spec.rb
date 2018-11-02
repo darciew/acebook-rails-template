@@ -15,7 +15,7 @@ RSpec.feature 'Profile Page - Wall Posts', type: :feature do
 
       scenario 'Can click on link and view new wall post form' do
         click_on('Post to this wall')
-        expect(find('h1.wall-post-title')).to have_content('Write your wall post here')
+        expect(find('.form-title')).to have_content('Write your wall post here')
       end
 
       scenario 'Can post to someones wall and is redirected back to that profile wall' do
