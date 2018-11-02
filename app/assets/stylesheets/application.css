@@ -1,15 +1,217 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+html {
+  min-height: 100%;
+}
+
+/* every item on page */
+* {
+    box-sizing: inherit;
+    -webkit-box-sizing: border-box;
+}
+
+/* all links */
+a {
+  color: #3498DB;
+  text-decoration: none;
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  background: #6E9ECF;
+  top: 0;
+  padding: 18px;
+}
+
+.nav a {
+  margin: 0 12px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.main-content {
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+  margin-left: 0;
+  background-color: #F5F5F5;
+  font-size: 16px;
+  font-family: sans-serif;;
+}
+
+.title {
+  margin: 50px auto 30px;
+  font-size: 20px;
+}
+
+h1, h2 {
+  margin-top: 50px;
+  margin-bottom: 40px;
+  color: #2D3033;
+  margin-left: 50px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+.form-title {
+  margin-bottom: 15px;
+}
+
+.field,
+.actions {
+  max-width: 300px;
+  margin: 0 auto 30px;
+}
+
+.field label,
+.field input {
+  display: block;
+  text-align: left;
+}
+
+.field em {
+  text-align: left;
+  color: grey;
+  margin-bottom: 12px;
+  display: block;
+  font-size: 12px;
+}
+
+input[type="email"],
+input[type="password"],
+textarea {
+  margin: 0;
+  padding: 9px 16px;
+  font: inherit;
+  color: #2C3E50;
+  font-size: 16px;
+  border-radius: 0;
+  border: 1px solid #DEDEDE;
+  -webkit-appearance: none;
+  width: 100%;
+  outline: none;
+}
+
+.field.remember-me {
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+/* button styles */
+
+.actions input {
+  display: block;
+  width: 100%;
+  font-size: 18px;
+  padding: 14px 24px;
+  line-height: 1;
+  text-align: center;
+  background-color: #6A8D9D;
+  color:#FFFFFF;
+  font-weight: bold;
+  margin-bottom: 18px;
+  border: none;
+}
+
+.create-post {
+  padding: 0 0 30px 10px;
+  font-size: 20px;
+}
+
+.timeline-wrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 0 50px;
+}
+
+.post-div, .wall-post-div, .forms {
+  width: 50%;
+  min-width: 600px;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.04);
+  border: 1px solid #E5E5E5;
+  border-radius: 4px;
+  padding: 30px;
+  margin-bottom: 20px;
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.post-author {
+  color: #2D3033;
+}
+
+.post-message, .wall-post-message {
+  font-size: 20px;
+  margin-bottom: 3px;
+}
+
+.post-timestamp, .wallpost-timestamp {
+  font-size: 12px;
+}
+
+/* Creating a post form */
+.forms {
+  margin: 50px;
+  margin-top: 15px;
+  width: 300px;
+}
+
+.new-post-label {
+  margin-bottom: 10px;
+}
+
+.forms textarea,
+.forms input {
+  margin: 0;
+  padding: 9px 16px;
+  font: inherit;
+  color: #2C3E50;
+  font-size: 16px;
+  border-radius: 0;
+  border: 1px solid #DEDEDE;
+  -webkit-appearance: none;
+  width: 100%;
+  outline: none;
+}
+
+.comment-div {
+  background: #e3eaf4;
+  /* box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.04); */
+  /* border: 1px solid #E5E5E5; */
+  border-radius: 4px;
+  margin: 1%;
+  padding: 2%;
+}
+
+.post-links, .wallpost-links, .comment-links, .wallpost-sender-receiver {
+  display:inline;
+}
+
+.comment-links > *, .post-links > *, .wallpost-links > * {
+  margin-right: 1%;
+}
+
+.comment-details {
+  float: right;
+}
+
+.post-links > .button_to {
+  display:inline;
+}
+
+.like-button {
+  background:none!important;
+  color: #3498DB;
+  border:none;
+  padding:0!important;
+  font: inherit;
+  cursor: pointer;
+}

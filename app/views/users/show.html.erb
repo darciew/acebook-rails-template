@@ -1,12 +1,12 @@
 <h1 id="user-name-title"><%= @user.name %></h1>
-
-<br>
-<%= link_to new_user_wall_post_path(@user) do %>
-Post to this wall
-<% end %>
-<br>
-<br>
-<div class='timeline'>
-  <%= render partial: "./posts/post", collection: @posts %>
-  <%= render partial: "./wall_posts/wall_post", collection: @wallposts %>
+<div class="timeline-wrapper">
+  <div class="create-post">
+    <%= link_to new_user_wall_post_path(@user) do %>
+    Post to this wall
+    <% end %>
+  </div>
+  <div class='posts-timeline'>
+    <%= render partial: "./posts/post", collection: @posts %>
+    <%= render partial: "./wall_posts/wall_post", collection: @wallposts %>
+  </div>
 </div>

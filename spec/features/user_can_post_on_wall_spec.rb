@@ -35,14 +35,14 @@ RSpec.feature 'Profile Page - Wall Posts', type: :feature do
     context 'Seeing a Sender\'s Name on a Wall Post' do
       scenario 'Can see the sender\'s name on a wall post' do
         create_wall_post('A message to my friend')
-        expect(find('div.wall-post-wrapper')).to have_selector('a#1.wall-post-author')
+        expect(find('.wallpost-sender-receiver')).to have_content("TestName posted on TestName's wall")
       end
     end
 
     context 'Deleting a Wall Post' do
       scenario 'Can delete a wallpost they have posted' do
         create_wall_post('A message to my friend')
-        click_on('Delete wall post')
+        within('.wallpost-links') { click_on('Delete') }
         expect(page).not_to have_content('A message to my friend')
       end
     end
@@ -50,24 +50,20 @@ RSpec.feature 'Profile Page - Wall Posts', type: :feature do
     context 'Editing a Wall Post' do
       scenario 'Can visit the edit wall post page' do
         create_wall_post('A message to my friend')
-        click_on('Edit Wall Post')
+        within('.wallpost-links') { click_on('Edit') }
         expect(page).to have_selector(:link_or_button, 'Update Wall Post')
       end
 
       scenario 'Can edit a wallpost they have posted' do
         create_wall_post('A message to my friend')
-        click_on('Edit Wall Post')
-        fill_in('wall_post_text', with: 'I\'ve edited my message')
-        click_on('Update Wall Post')
+        edit_wall_post('I\'ve edited my message')
         expect(page).to_not have_content('A message to my friend')
         expect(page).to have_content('I\'ve edited my message')
       end
 
       scenario 'Can not edit wall post if empty' do
         create_wall_post('A message to my friend')
-        click_on('Edit Wall Post')
-        fill_in('wall_post_text', with: '')
-        click_on('Update Wall Post')
+        edit_wall_post('')
         expect(page).to_not have_content('Your post has been updated')
         expect(page).to have_content('Wallpost message cannot be empty')
       end

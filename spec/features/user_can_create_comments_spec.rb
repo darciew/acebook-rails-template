@@ -10,7 +10,7 @@ RSpec.feature 'Comments', type: :feature do
   end
   scenario 'Comment button loads new comment page' do
     click_on('Comment')
-    expect(page).to have_content('Type your comment below:')
+    expect(page).to have_content('Write your comment below')
   end
   scenario 'User can create comment' do
     create_comment('This is a comment')
@@ -19,22 +19,18 @@ RSpec.feature 'Comments', type: :feature do
   end
   scenario 'User can delete own comment' do
     create_comment('This is a comment')
-    click_on('Delete Comment')
+    within('.comment-links') { click_on('Delete') }
     expect(page).not_to have_content('This is a comment')
   end
   scenario 'User can edit own comment' do
     create_comment('This is a comment')
-    click_on('Edit Comment')
-    fill_in('comment[message]', with: 'A different comment')
-    click_button('Submit')
+    edit_comment('A different comment')
     expect(page).not_to have_content('This is a comment')
     expect(page).to have_content('A different comment')
   end
   scenario 'User sees edit screen again when blank edit message submitted' do
     create_comment('This is a comment')
-    click_on('Edit Comment')
-    fill_in('comment[message]', with: '')
-    click_button('Submit')
-    expect(find('h1')).to have_content('Edit comment')
+    edit_comment('')
+    expect(find('h2')).to have_content('Edit comment')
   end
 end

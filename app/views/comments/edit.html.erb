@@ -1,7 +1,7 @@
-<h1>Edit comment</h1>
-
-<%= form_for [@post, @comment] do |f| %>
-<%= f.label :message %>
-<%= f.text_area :message, value: @comment.message %>
-<%= f.submit "Submit" %>
-<% end %>
+<h2 class="form-title">Edit comment</h2>
+<div class="edit-comment-form forms">
+  <%= form_for [@post, @comment] do |f| %>
+  <%= f.text_area :message, value: @comment.message %>
+  <%= f.submit "Submit" %>
+  <% end %>
+</div>

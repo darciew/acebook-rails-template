@@ -1,20 +1,22 @@
 <div class='post-div' id=<%=post.id%>>
-  <%= link_to post.user.name, user_path(post.user), method: :get, id: post.id, class: 'post-author' %>
+  <p class='post-author'><%= link_to "#{post.user.name}'s", user_path(post.user), method: :get, id: post.id%> post:</p>
   <p class='post-message' id=<%=post.id%>><%= h(post.message).gsub(/\n/, '<br/>').html_safe %></p>
   <p class='post-timestamp' id=<%=post.id%>><%= post.format_date %></p>
-  <p class='post-like-count' id='like-count'><%=post.likes.size%><span class=emoji>&#x1F44D;</span></p>
-  <% unless post.liked_by(current_user) %>
-    <%= button_to 'Like', post_likes_path(post), method: :post, id: "like-button", class: "like-button", params: {user_id: current_user.id, post_id: post.id } %>
-  <% else %>
-    <%= button_to 'Unlike', post_like_path(post.id, post.liked_by(current_user).id), :method => :delete, id: 'unlike-button'%>
-  <% end %>
-  <%= button_to 'Comment', new_post_comment_path(post), method: :get, class: "comment-button", params: { post_id: post.id } %>
-  <% if current_user == post.user %>
-    <% if !post.older_than_10_mins? %>
-      <p class='post-edit'><%= link_to 'Edit Post', edit_post_path(post) %></p>
+  <div class="post-links">
+    <span id="like-count"><%=post.likes.size%><span class=emoji>&#x1F44D;</span></span>
+    <% unless post.liked_by(current_user) %>
+    <%= button_to 'Like', post_likes_path(post), method: :post, id: "like-button", class: "like-button", params: {user_id: current_user.id, post_id: post.id} %>
+    <% else %>
+    <%= link_to 'Unlike', post_like_path(post.id, post.liked_by(current_user).id), :method => :delete, id: 'unlike-button'%>
     <% end %>
-    <p class='post-delete'><%= link_to 'Delete', post, :data => {:confirm => "Are you sure?"}, :method => :delete %></p>
-  <% end %>
+    <%= link_to 'Comment', new_post_comment_path(post), method: :get, class: "comment-button", params: { post_id: post.id } %>
+    <% if current_user == post.user %>
+      <% if !post.older_than_10_mins? %>
+        <%= link_to 'Edit', edit_post_path(post) %>
+      <% end %>
+      <%= link_to 'Delete', post, :data => {:confirm => "Are you sure?"}, :method => :delete %>
+    <% end %>
+  </div>
   <div class='comment-section'>
     <%= render partial: './comments/comment', collection: post.comments %>
   </div>

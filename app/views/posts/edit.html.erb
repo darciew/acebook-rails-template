@@ -1,11 +1,8 @@
-<h1>Edit Post</h1>
+<h2 class="form-title">Edit your post below</h2>
+<div class="edit-post-form forms">
 
-<%= form_for @post do |f| %>
-  <p>
-    <%= f.label :message %> <br />
-    <%= f.text_area :message %> <br />
-  </p>
-  <p>
-    <%= f.submit 'Update Post' %> <br />
-  </p>
-<% end %>
+  <%= form_for @post do |f| %>
+      <%= f.text_area :message, value: @post.message %>
+      <%= f.submit 'Update Post' %>
+  <% end %>
+</div>

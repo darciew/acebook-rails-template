@@ -1,6 +1,7 @@
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_area :message %>
-
-  <%= form.submit "Submit" %>
-<% end %>
+<h2 class="form-title">Write your post below</h2>
+<div class="new-post-form forms">
+  <%= form_for @post do |form| %>
+    <%= form.text_area :message %>
+    <%= form.submit "Submit" %>
+  <% end %>
+</div>
