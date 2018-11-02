@@ -1,12 +1,7 @@
-<div class="new-post-form">
+<h2 class="form-title">Write your post below</h2>
+<div class="new-post-form forms">
   <%= form_for @post do |form| %>
-  <div class="new-post-label">
-    <%= form.label :message %>
-  </div>
     <%= form.text_area :message %>
-
-  <div class="actions">
     <%= form.submit "Submit" %>
-  </div>
   <% end %>
 </div>

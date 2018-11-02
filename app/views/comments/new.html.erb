@@ -1,10 +1,11 @@
-Type your comment below:
-<%= form_for [@post, @comment] do |form| %>
-  <%= form.label :message %>
-  <%= form.text_area :message %>
+<h2 class="form-title">Write your comment below</h2>
+<div class="new-comment-form forms">
+  <%= form_for [@post, @comment] do |form| %>
+    <%= form.text_area :message %>
 
-  <%= form.hidden_field :user_id, value: current_user.id %>
-  <%= form.hidden_field :post_id, value: @post.id %>
+    <%= form.hidden_field :user_id, value: current_user.id %>
+    <%= form.hidden_field :post_id, value: @post.id %>
 
-  <%= form.submit "Submit" %>
-<% end %>
+    <%= form.submit "Submit" %>
+  <% end %>
+</div>

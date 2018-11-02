@@ -1,8 +1,14 @@
 def create_post(message)
   visit '/'
   click_link 'Create post'
-  fill_in 'Message', with: message
+  fill_in 'post[message]', with: message
   click_button 'Submit'
+end
+
+def edit_post(message)
+  within('.post-links') { click_link('Edit') }
+  fill_in('post_message', with: message)
+  click_on('Update Post')
 end
 
 def sign_up_helper(email, name, password)
@@ -35,9 +41,23 @@ def create_comment(message)
   click_button("Submit")
 end
 
+def edit_comment(message)
+  within('.comment-links') do
+    click_on('Edit')
+  end
+  fill_in('comment[message]', with: message)
+  click_button('Submit')
+end
+
 def create_wall_post(message)
   visit '/testname'
   click_link 'Post to this wall'
   fill_in 'Text', with: message
   click_button 'Submit'
+end
+
+def edit_wall_post(message)
+  within('.wallpost-links') { click_on('Edit') }
+  fill_in('wall_post_text', with: message)
+  click_on('Update Wall Post')
 end

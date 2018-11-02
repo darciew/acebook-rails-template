@@ -14,13 +14,13 @@ RSpec.feature 'Likes', type: :feature do
 
   scenario 'There is a like count for every post' do
     create_post('I want to like this post')
-    expect(find('div#1.post-div')).to have_selector('p#like-count')
+    expect(find('div#1.post-div')).to have_selector('#like-count')
   end
 
   scenario 'When the user likes a post, the like count increases by one' do
     create_post('I want to like this post')
     click_on('Like')
-    expect(find('p#like-count')).to have_content('1👍')
+    expect(find('#like-count')).to have_content('1👍')
   end
 
   scenario 'User can only like post once' do
@@ -40,6 +40,6 @@ RSpec.feature 'Likes', type: :feature do
     create_post('I want to like this post')
     click_on('Like')
     click_on('Unlike')
-    expect(find('p#like-count')).to have_content('0👍')
+    expect(find('#like-count')).to have_content('0👍')
   end
 end

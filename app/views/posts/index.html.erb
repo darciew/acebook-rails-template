@@ -1,5 +1,5 @@
+<h1>AceBook</h1>
 <div class='timeline-wrapper'>
-  <h1>AceBook</h1>
   <div class="create-post">
     <% if current_user %>
       <%= link_to new_post_path do %>
@@ -8,6 +8,7 @@
     <% end %>
   </div>
 
-<div class='posts-timeline'>
-  <%= render @posts %>
+  <div class='posts-timeline'>
+    <%= render @posts %>
+  </div>
 </div>
